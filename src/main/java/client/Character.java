@@ -1746,6 +1746,9 @@ public class Character extends AbstractCharacterObject {
 
         this.mapTransitioning.set(true);
 
+        // Log map change
+        log.info("Player {} changed map from {} to {}", getName(), map.getId(), to.getId());
+
         this.unregisterChairBuff();
         Trade.cancelTrade(this, Trade.TradeResult.UNSUCCESSFUL_ANOTHER_MAP);
         this.closePlayerInteractions();
