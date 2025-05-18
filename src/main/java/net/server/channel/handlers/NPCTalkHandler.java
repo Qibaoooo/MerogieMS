@@ -56,6 +56,7 @@ public final class NPCTalkHandler extends AbstractPacketHandler {
             if (YamlConfig.config.server.USE_DEBUG) {
                 c.getPlayer().dropMessage(5, "Talking to NPC " + npc.getId());
             }
+            log.info("Player {} started conversation with NPC {} in map {}", c.getPlayer().getName(), npc.getId(), c.getPlayer().getMapId());
 
             if (npc.getId() == NpcId.DUEY) {
                 DueyProcessor.dueySendTalk(c, false);
