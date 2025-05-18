@@ -854,6 +854,7 @@ public class PacketCreator {
      * @return The server IP packet.
      */
     public static Packet getServerIP(InetAddress inetAddr, int port, int clientId) {
+        System.out.println("ServerIP: " + inetAddr.getHostAddress() + ":" + port);
         final OutPacket p = OutPacket.create(SendOpcode.SERVER_IP);
         p.writeShort(0);
         byte[] addr = inetAddr.getAddress();
